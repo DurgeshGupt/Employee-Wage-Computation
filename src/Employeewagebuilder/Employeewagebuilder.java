@@ -1,20 +1,18 @@
 package Employeewagebuilder;
 
 public class Employeewagebuilder {
-         static final int IS_FULL_TIME = 1;
+
+    static final int PER_HOUR = 20;
+    static final int PER_DAY_HOUR = 8;
 
     public static void main(String[] args) {
 
-        System.out.println("welcome to computation problem");
-        double a = Math.floor(Math.random() * 10) % 2;
+        int PER_HOUR = 20;
+        int PER_DAY_HOUR = 8;
 
-        if (a == IS_FULL_TIME)
-        {
-            System.out.println("Employee is present");
-        }
-        else
-        {
-            System.out.println("Employee is absent");
-        }
+        int FULL_DAY_WAGES = (PER_HOUR * PER_DAY_HOUR);
+
+        System.out.println(FULL_DAY_WAGES);
+
     }
 }
