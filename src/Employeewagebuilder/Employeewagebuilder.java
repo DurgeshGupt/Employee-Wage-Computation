@@ -1,28 +1,41 @@
 package Employeewagebuilder;
 
-public class Employeewagebuilder {
+public class Employeewagebuilder{
 
-    static final int PER_HOUR = 20;
-    static final int PER_DAY_HOUR = 8;
+        public static final int IS_PART_TIME = 1;
+        public static final int IS_FULL_TIME = 2;
+        public static final int NUM_OF_WORKING_DAYS = 20;
+        public static final int EMP_RATE_PER_HOUR = 2;
 
-    public static void main(String[] args) {
 
-        int IS_PART_TIME = 1;
-        int IS_FULL_TIME = 2;
-        int EMP_RATE_PER_HOUR = 20;
-        int empHRS = 0;
-        int empWAGE = 0;
+        public static void main(String[] args)
+        {
+            int empHrs = 0, empWage = 0, totalEmpWage = 0;
+            for(int day=0; day < NUM_OF_WORKING_DAYS; day++)
+            {
+                int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 
-        double empcheck = Math.floor(Math.random() * 10) % 3;
+                switch(empCheck) {
 
-        if(empcheck == IS_FULL_TIME)
-            empHRS = 8;
-        else if (empcheck == IS_PART_TIME)
-            empHRS = 4;
+                    case IS_FULL_TIME:
+                        empHrs = 8;
+                        break;
 
-        empWAGE = empHRS * EMP_RATE_PER_HOUR;
+                    case IS_PART_TIME:
+                        empHrs = 4;
+                        break;
 
-        System.out.println("Emp wage " + empWAGE);
+                    default :
+                        empHrs = 0;
+                }
+                empWage = empHrs * EMP_RATE_PER_HOUR;
+                totalEmpWage += empWage;
+                System.out.println("Emp Wage: " + empWage);
+            }
+            System.out.println("total wmp wage " + totalEmpWage);
+
+
+        }
 
     }
-}
+
